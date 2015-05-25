@@ -10,14 +10,43 @@
   <p>我的第一个表达式：{{ quantity + cost }}</p>
   <p>姓{{person.lastName}}</p>
 </div> -->
-<div ng-app="" ng-init="firstName='John'">
+
+<!-- <div ng-app="" ng-init="firstName='John'">
 
   <p>在输入框中尝试输入：</p>
   <p>姓名：<input type="text" ng-model="firstName"></p>
   <p>你输入的为： {{ firstName }}</p>
 
-</div>
+</div> -->
 
+<!-- <div ng-app="" ng-init="quantity=1;price=5">
+  <h2>价格计算器</h2>
+  数量： <input type="number" ng-model="quantity">
+  价格： <input type="number" ng-model="price">
+  <p><b>总价：</b> {{ quantity * price }}</p>
+</div> -->
+
+<!-- <div ng-app="" ng-init="names=['aa','bb','cc']">
+  <p>使用ng-repeat来循环数组</p>
+  <ul>
+    <li ng-repeat="x in names">
+      {{x}}
+    </li>
+  </ul>
+</div> -->
+
+<div ng-app="" ng-init="names=[
+{name:'aa',country:'china'},
+{name:'bb',country:'wr'},
+{name:'cc',country:'fdsf'}
+]">
+  <p>循环对象：</p>
+  <ul>
+    <li ng-repeat="x in names">
+      {{ x.name + ',' + x.country }}
+    </li>
+  </ul>
+</div>
 <script src="../js/angular.min.js"></script>
 
 </body>
