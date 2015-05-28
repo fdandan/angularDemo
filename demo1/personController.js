@@ -14,6 +14,10 @@ angular.module('myModule', ['xx'])
       x = $scope.person
       return x.firstName + " " + x.lastName
     }
+    $scope.myVar = false
+    $scope.toggle = function() {
+      $scope.myVar = !$scope.myVar
+    }
   }])
   // .controller('nameController', ['$scope', function($scope) {
   //   $scope.names = [
@@ -23,10 +27,22 @@ angular.module('myModule', ['xx'])
   //   ]
   // }])
   .controller('customersController', ['$scope','$http', function($scope, $http) {
-    $http.jsonp('http://www.w3cschool.cc/try/angularjs/data/Customers_JSON.php?callback=JSON_CALLBACK')
+    $http.get('data.json')
     .success(function(response) {
-      console.log(response)
       $scope.names = response
     })
-    console.log('aaaaaaaaa')
   }])
+
+  .controller('formController', ['$scope', function($scope) {
+    $scope.master = {firstName:'denise', lastName:'feng'}
+    $scope.reset = function() {
+      $scope.user = angular.copy($scope.master)
+    }
+    $scope.reset()
+  }])
+
+  .controller('validateCtrl', ['$scope', function($scope) {
+    $scope.username = 'denisefeng'
+    $scope.email = 'denisefeng@qiyi.com'
+  }])
+
