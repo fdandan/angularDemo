@@ -40,3 +40,17 @@ angular.module('app',[])
       }
     }
   }])
+
+  .controller('myTodoCtrl', ['$scope', function($scope) {
+    $scope.message = ''
+    $scope.clear = function() {$scope.message = ''}
+    $scope.save = function() {
+      $scope.message = ''
+      alert('Saved!')
+      
+    }
+    $scope.left = function() {
+      return 100 - $scope.message.length
+    }
+
+  }])
